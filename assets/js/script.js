@@ -35,14 +35,22 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   
-  //declare variable for html element where day/date will display
+  //declare variables for html elements where day/date and time will display
   var dayDisplayEl = $('#currentDay');
+  var timeDisplayEl = $('#currentTime');
   //function to grab current day/date using dayjs and display in web page
   function displayCurrentDay() {
     var currentDay = dayjs().format('dddd - MMMM d, YYYY');
     dayDisplayEl.text(currentDay);
   }
 
+  function displayCurrentTime() {
+    var currentTime = dayjs().format('h:mm a');
+    timeDisplayEl.text(currentTime);
+  }
+
 //call function to grab current day/date and display in page
   displayCurrentDay();
+  displayCurrentTime();
+  setInterval(displayCurrentTime, 60000);
 });

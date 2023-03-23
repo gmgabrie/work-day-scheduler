@@ -40,7 +40,7 @@ $(function () {
   var timeDisplayEl = $('#currentTime');
   //function to grab current day/date using dayjs and display in web page
   function displayCurrentDay() {
-    var currentDay = dayjs().format('dddd - MMMM d, YYYY');
+    var currentDay = dayjs().format('dddd - MMMM D, YYYY');
     dayDisplayEl.text(currentDay);
   }
 

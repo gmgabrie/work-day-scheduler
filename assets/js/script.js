@@ -28,6 +28,35 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+
+function checkTimeBlock() {
+  var currentHour = dayjs().format('H');
+  // console.log(currentHour);
+
+  $('.time-block').each(function () {
+    var hourId = parseInt($(this).attr('id').split("hour-")[1]);
+    // console.log(hourId);
+
+    if (hourId < currentHour) {
+      $(this).addClass('past');
+    }
+    else if (hourId == currentHour) {
+      $(this).removeClass('past');
+      $(this).removeClass('future');
+      $(this).addClass('present');
+    }
+    else if (hourId > currentHour) {
+      $(this).removeClass('past');
+      $(this).removeClass('present');
+      $(this).addClass('future');
+    }
+  });
+}
+
+  
+  
+
+
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -38,11 +67,11 @@ $(function () {
   $('#hour-10 .description').val(localStorage.getItem('hour-10'));
   $('#hour-11 .description').val(localStorage.getItem('hour-11'));
   $('#hour-12 .description').val(localStorage.getItem('hour-12'));
-  $('#hour-1 .description').val(localStorage.getItem('hour-1'));
-  $('#hour-2 .description').val(localStorage.getItem('hour-2'));
-  $('#hour-3 .description').val(localStorage.getItem('hour-3'));
-  $('#hour-4 .description').val(localStorage.getItem('hour-4'));
-  $('#hour-5 .description').val(localStorage.getItem('hour-5'));
+  $('#hour-13 .description').val(localStorage.getItem('hour-13'));
+  $('#hour-14 .description').val(localStorage.getItem('hour-14'));
+  $('#hour-15 .description').val(localStorage.getItem('hour-15'));
+  $('#hour-16 .description').val(localStorage.getItem('hour-16'));
+  $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
   //
   // TODO: Add code to display the current date in the header of the page.
@@ -65,4 +94,7 @@ $(function () {
   displayCurrentDay();
   displayCurrentTime();
   setInterval(displayCurrentTime, 60000);
+
+  checkTimeBlock();
+  setInterval(checkTimeBlock, 1000);
 });

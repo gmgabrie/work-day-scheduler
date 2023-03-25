@@ -7,9 +7,11 @@ xxxxxxxx
 
 ## Usage
 
-Application link:  xxxxxxxxxx
+xxxxxxxx
 
-xxxxxxxxxxx
+## Application link:
+
+https://gmgabrie.github.io/work-day-scheduler/
 
 ![portfolio screenshot](./assets/images/xxxxxxxxxxxx)
 

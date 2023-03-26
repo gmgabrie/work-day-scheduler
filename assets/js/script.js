@@ -1,8 +1,5 @@
 
 
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
 // Event listener for save button click
   $('.saveBtn').on('click', function () {
@@ -33,7 +30,7 @@ function checkTimeBlock() {
       $(this).removeClass('future');
       $(this).addClass('present');
     }
-    else if (hourId > currentHour) {
+    else {
       $(this).removeClass('past');
       $(this).removeClass('present');
       $(this).addClass('future');
@@ -67,11 +64,12 @@ function checkTimeBlock() {
     timeDisplayEl.text(currentTime);
   }
 
-//call function to grab current day/date and display in page
+//call function to grab current day/date and display in page every 30 seconds
   displayCurrentDay();
   displayCurrentTime();
-  setInterval(displayCurrentTime, 60000);
+  setInterval(displayCurrentTime, 30000);
 
+//call checkTimeBlock function every 60 seconds
   checkTimeBlock();
-  setInterval(checkTimeBlock, 1000);
+  setInterval(checkTimeBlock, 60000);
 });

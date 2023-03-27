@@ -13,7 +13,7 @@ The header includes a title and dynamically changing date/time information using
 
 https://gmgabrie.github.io/work-day-scheduler/
 
-![portfolio screenshot](./assets/images/xxxxxxxxxxxx)
+![schedule screenshot](./assets/images/screenshot.png)
 
 ## Credits
 
